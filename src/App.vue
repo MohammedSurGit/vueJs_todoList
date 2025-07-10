@@ -122,6 +122,11 @@ const completedTasks = computed(() =>
   --error-accent: rgb(255, 97, 97);
 }
 
+* {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+}
+
 
 body {
   background-color: #1e1e2f;
@@ -271,7 +276,7 @@ svg {
 
   ul {
     width: 100%;
-    height: 280px;
+    height: 300px;
   }
 
   li {
