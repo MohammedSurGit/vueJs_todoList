@@ -69,14 +69,27 @@
 <!-- ================= script ================= -->
 <script setup>
 
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 
 const taskName = ref('');
 const tasks = ref([]);
 const hideCompleted = ref(false);
 
+onMounted(() => {
+  const savedTasks = localStorage.getItem('tasks');
+  if (savedTasks) {
+    tasks.value = JSON.parse(savedTasks);
+  }
+});
+
+
+watch(tasks, (newTasks) => {
+  localStorage.setItem('tasks', JSON.stringify(newTasks));
+}, { deep: true });
+
+
 const addTask = () => {
-  if (taskName.value != '') {
+  if (taskName.value.trim() !== '') {
     tasks.value.push({
       name: taskName.value,
       done: false
