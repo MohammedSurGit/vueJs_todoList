@@ -232,6 +232,15 @@ input[type="checkbox"] {
 
 .task {
   flex-grow: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  width: 100%;
+}
+
+.task > span {
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  white-space: nowrap;      
 }
 
 .deleteTaskButton {
