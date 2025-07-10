@@ -87,6 +87,11 @@ watch(tasks, (newTasks) => {
   localStorage.setItem('tasks', JSON.stringify(newTasks));
 }, { deep: true });
 
+const savedHideCompleted = localStorage.getItem('hideCompleted');
+if (savedHideCompleted !== null) {
+  hideCompleted.value = JSON.parse(savedHideCompleted);
+}
+
 
 const addTask = () => {
   if (taskName.value.trim() !== '') {
@@ -113,6 +118,7 @@ const showHideCompleted = computed(() => {
 
 const hideCompletedTasks = (event) => {
   hideCompleted.value = event.target.checked;
+  localStorage.setItem('hideCompleted', JSON.stringify(hideCompleted.value));
 };
 
 const filteredTasks = computed(() =>
