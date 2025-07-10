@@ -124,7 +124,6 @@ const completedTasks = computed(() =>
 
 * {
   box-sizing: border-box;
-  -webkit-appearance: none;
 }
 
 
@@ -153,6 +152,7 @@ input[type="text"] {
   border: none;
   width: 300px;
   font-size: 1rem;
+  border-radius: 0;
 }
 
 button {
