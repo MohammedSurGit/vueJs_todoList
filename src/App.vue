@@ -285,6 +285,12 @@ svg {
 }
 
 @media screen and (max-width: 425px) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
   body {
     padding: 12px;
   }
@@ -304,7 +310,7 @@ svg {
 
   ul {
     width: 100%;
-    height: 340px;
+    flex-grow: 1;
   }
 
   li {
